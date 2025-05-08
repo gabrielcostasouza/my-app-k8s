@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
       - name: backend
-        image: ghcr.io/kelseyhightower/helloworld:latest  # Replace with your real image
+        image: gabrielcostasouza/backend:latest # Replace with your real image
         ports:
-        - containerPort: 5000
+        - containerPort: 8080
         env:
         - name: DB_HOST
           value: "postgres"
