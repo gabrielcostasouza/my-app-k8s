@@ -16,7 +16,7 @@ spec:
       - name: backend
         image: gabrielcostasouza/backend:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 5000
         env:
         - name: DB_HOST
           value: "postgres"  # Change if your DB service name is different
@@ -41,7 +41,7 @@ spec:
     app: backend
   ports:
     - port: 80
-      targetPort: 8080
+      targetPort: 5000
       protocol: TCP
       nodePort: 30080  # You can choose any free port from 30000–32767
 
