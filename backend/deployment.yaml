@@ -14,22 +14,22 @@ spec:
     spec:
       containers:
       - name: backend
-        image: gabrielcostasouza/backend:latest # Replace with your real image
+        image: gabrielcostasouza/backend:latest
         ports:
         - containerPort: 8080
         env:
         - name: DB_HOST
-          value: "postgres"
+          value: "postgres"  # Change if your DB service name is different
         - name: DB_USER
           valueFrom:
             secretKeyRef:
               name: db-secret
-              key: user
+              key: DB_USER
         - name: DB_PASS
           valueFrom:
             secretKeyRef:
               name: db-secret
-              key: password
+              key: DB_PASS
 ---
 apiVersion: v1
 kind: Service
@@ -40,4 +40,5 @@ spec:
     app: backend
   ports:
   - port: 80
-    targetPort: 5000
+    targetPort: 8080
+    protocol: TCP
