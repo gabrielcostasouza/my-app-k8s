@@ -10,7 +10,7 @@
 
   <script>
     function fetchBackend() {
-      fetch('http://201.49.23.84:30080')  // update with real IP or use Ingress later
+      fetch('http://192.168.1.115:30080')  // update with real IP or use Ingress later
         .then(res => res.text())
         .then(data => {
           document.getElementById('output').innerText = data;
