@@ -1,0 +1,10 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Simple frontend for Kubernetes demo",
+  "scripts": {
+    "build": "echo 'No build step needed for plain HTML.'"
+  },
+  "author": "gabrielcostasouza",
+  "license": "MIT"
+}
