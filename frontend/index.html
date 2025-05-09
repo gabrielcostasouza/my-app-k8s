@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My K8s App</title>
+</head>
+<body>
+  <h1>Frontend</h1>
+  <button onclick="fetchBackend()">Call Backend</button>
+  <pre id="output"></pre>
+
+  <script>
+    function fetchBackend() {
+      fetch('http://<NODE-IP>:30080')  // update with real IP or use Ingress later
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('output').innerText = data;
+        })
+        .catch(err => {
+          document.getElementById('output').innerText = 'Error: ' + err;
+        });
+    }
+  </script>
+</body>
+</html>
